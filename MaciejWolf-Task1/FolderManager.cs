@@ -27,11 +27,6 @@ namespace MaciejWolf_Task1
 
             if(depth >= 1)
                 createNestedFolders(PARENT_DIRECTORY, depth);
-
-            foreach (string folder in folders)
-            {
-                Console.WriteLine(folder);
-            }
         }
 
         public string getPath(int depth)
