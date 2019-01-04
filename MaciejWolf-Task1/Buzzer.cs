@@ -12,16 +12,16 @@ namespace MaciejWolf_Task1
         private const String FIZZ_SIGNAL = "Fizz";
         private const String BUZZ_SIGNAL = "Buzz";
 
-        public String getSignal(int input)
+        public String GetSignal(int input)
         {
             string signal = "";
 
-            if(input % FIZZ_NUMBER == 0)
+            if (input % FIZZ_NUMBER == 0)
             {
                 signal += FIZZ_SIGNAL;
             }
 
-            if(input % BUZZ_NUMBER == 0)
+            if (input % BUZZ_NUMBER == 0)
             {
                 signal += BUZZ_SIGNAL;
             }

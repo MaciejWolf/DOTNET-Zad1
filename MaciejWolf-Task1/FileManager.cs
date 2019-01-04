@@ -18,9 +18,9 @@ namespace MaciejWolf_Task1
 
             path = Path.Combine(path, fileName);
             File.Create(path);
-            
+
         }
-           
+
         public void DeleteFiles(string path)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
@@ -29,8 +29,10 @@ namespace MaciejWolf_Task1
             {
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
-                if(fi.Exists)
+                if (fi.Exists)
+                {
                     fi.Delete();
+                }
             }
         }
     }

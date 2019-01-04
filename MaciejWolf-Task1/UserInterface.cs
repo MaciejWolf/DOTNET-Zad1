@@ -13,11 +13,11 @@ namespace MaciejWolf_Task1
 
             string input;
 
-            while(true)
+            while (true)
             {
                 input = Console.ReadLine();
 
-                if(validOptions.Any(s => s.Equals(input, StringComparison.OrdinalIgnoreCase)))
+                if (validOptions.Any(s => s.Equals(input, StringComparison.OrdinalIgnoreCase)))
                 {
                     break;
                 }
@@ -39,9 +39,9 @@ namespace MaciejWolf_Task1
         {
             int userInput;
 
-            while(true)
+            while (true)
             {
-                while(true)
+                while (true)
                 {
                     try
                     {
@@ -56,9 +56,9 @@ namespace MaciejWolf_Task1
 
                     break;
                 }
-                
 
-                if(userInput < begin || userInput > end)
+
+                if (userInput < begin || userInput > end)
                 {
                     Console.WriteLine("Input out of range");
                 }

@@ -22,14 +22,18 @@ namespace MaciejWolf_Task1
 
         public void CreateNestedFolders(int depth)
         {
-            if(0 != folders.Count)
+            if (0 != folders.Count)
+            {
                 DeleteFolders();
+            }
 
-            if(depth >= 1)
-                createNestedFolders(PARENT_DIRECTORY, depth);
+            if (depth >= 1)
+            {
+                CreateNestedFolders(PARENT_DIRECTORY, depth);
+            }
         }
 
-        public string getPath(int depth)
+        public string GetPath(int depth)
         {
             string path = PARENT_DIRECTORY;
 
@@ -41,19 +45,21 @@ namespace MaciejWolf_Task1
             return path;
         }
 
-        private void createNestedFolders(String path, int depth)
+        private void CreateNestedFolders(String path, int depth)
         {
-            string guid = createFolder(path);
+            string guid = CreateFolder(path);
 
             folders.Add(guid);
 
             path = System.IO.Path.Combine(path, guid);
 
-            if(depth > 1)
-                createNestedFolders(path, depth - 1);
+            if (depth > 1)
+            {
+                CreateNestedFolders(path, depth - 1);
+            }
         }
 
-        private string createFolder(String path)
+        private string CreateFolder(String path)
         {
             string foderName = Guid.NewGuid().ToString();
 
@@ -66,7 +72,7 @@ namespace MaciejWolf_Task1
 
         private void DeleteFolders()
         {
-            System.IO.DirectoryInfo directoryInfo = new System.IO.DirectoryInfo(getPath(1));
+            System.IO.DirectoryInfo directoryInfo = new System.IO.DirectoryInfo(GetPath(1));
 
             GC.Collect();
             GC.WaitForPendingFinalizers();

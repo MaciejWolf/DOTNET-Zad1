@@ -15,7 +15,7 @@ namespace MaciejWolf_Task1
 
         static void Main(string[] args)
         {
-            while(true)
+            while (true)
             {
                 ui.WriteLine("1. FizzBuzz\n" +
                     "2. DeepDive\n" +
@@ -26,7 +26,9 @@ namespace MaciejWolf_Task1
                     "Choose option: ", 1, 4);
 
                 if (4 == opt)
+                {
                     break;
+                }
 
                 switch (opt)
                 {
@@ -46,7 +48,7 @@ namespace MaciejWolf_Task1
         private static void Buzz()
         {
             int buzzerOption = ui.GetUserInput("Buzzer input: ", 0, 1000);
-            ui.WriteLine(buzzer.getSignal(buzzerOption));
+            ui.WriteLine(buzzer.GetSignal(buzzerOption));
         }
 
         private static void CreateNestedFolders()
@@ -57,10 +59,10 @@ namespace MaciejWolf_Task1
 
         private static void CreateFile()
         {
-            if(folderManager.GetDepth() != 0)
+            if (folderManager.GetDepth() != 0)
             {
                 int depth = ui.GetUserInput("Depth: ", 1, folderManager.GetDepth());
-                string path = folderManager.getPath(depth);
+                string path = folderManager.GetPath(depth);
 
                 if (fileManager.ContainsFile(path))
                 {
