@@ -12,8 +12,13 @@ namespace WebApi.Models
         private const String FIZZ_SIGNAL = "Fizz";
         private const String BUZZ_SIGNAL = "Buzz";
 
-        public String GetSignal(int input)
+        public string GetSignal(int input)
         {
+            if(input < 0 || input > 1000)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             string signal = "";
 
             if (input % FIZZ_NUMBER == 0)

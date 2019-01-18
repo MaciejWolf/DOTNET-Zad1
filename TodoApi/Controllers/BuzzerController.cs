@@ -18,7 +18,15 @@ namespace WebApi.Controllers
         [HttpGet("{input}")]
         public ActionResult<string> GetRoom(int input)
         {
-            var signal = buzzer.GetSignal(input);
+            string signal;
+            try
+            {
+                signal = buzzer.GetSignal(input);
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                return BadRequest();
+            }
 
             return signal;
         }
