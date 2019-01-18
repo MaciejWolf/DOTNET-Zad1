@@ -19,6 +19,14 @@ namespace TodoApi.Controllers
         public RoomController(RoomContext context)
         {
             this.context = context;
+
+            if(context.Rooms.Count() == 0)
+            {
+                context.Rooms.Add(new Room { Name = "A", Floor = 3 });
+                context.Rooms.Add(new Room { Name = "B", Floor = 35 });
+                context.Rooms.Add(new Room { Name = "C", Floor = 23 });
+                context.SaveChanges();
+            }
         }
 
         // GET: /api/Todo
@@ -52,6 +60,34 @@ namespace TodoApi.Controllers
             return CreatedAtAction("GetRoom", new { id = room.Id }, room);
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutRoom(long id, Room room)
+        {
+            if(id != room.Id)
+            {
+                return BadRequest();
+            }
 
+            context.Entry(room).State = EntityState.Modified;
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Room>> DeleteRoom(long id)
+        {
+            var room = await context.Rooms.FindAsync(id);
+
+            if(room == null)
+            {
+                return NotFound();
+            }
+
+            context.Rooms.Remove(room);
+            await context.SaveChangesAsync();
+
+            return room;
+        }
     }
 }
