@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MaciejWolf_Task1
+namespace WebApi
 {
     class FolderManager
     {

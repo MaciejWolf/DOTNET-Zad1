@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebApi
+namespace WebApi.Models
 {
-    class Buzzer
+    public class Buzzer
     {
         private const int FIZZ_NUMBER = 2;
         private const int BUZZ_NUMBER = 3;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MaciejWolf_Task1
+namespace WebApi
 {
     class Program
     {
