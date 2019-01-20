@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaciejWolf-Task1", "MaciejW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "TodoApi\WebApi.csproj", "{3E477338-6D8E-4CB6-A346-ACE38D637028}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi2", "WebApi2\WebApi2.csproj", "{849ADD78-9004-4D62-8CB6-C628D4FF310D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3E477338-6D8E-4CB6-A346-ACE38D637028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E477338-6D8E-4CB6-A346-ACE38D637028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E477338-6D8E-4CB6-A346-ACE38D637028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{849ADD78-9004-4D62-8CB6-C628D4FF310D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{849ADD78-9004-4D62-8CB6-C628D4FF310D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{849ADD78-9004-4D62-8CB6-C628D4FF310D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{849ADD78-9004-4D62-8CB6-C628D4FF310D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

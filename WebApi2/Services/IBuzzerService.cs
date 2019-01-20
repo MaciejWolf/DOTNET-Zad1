@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi.Models
+namespace WebApi2.Services
 {
-    public class BuzzerContext
+    public interface IBuzzerService
     {
-        
+        string GetSignal(int input);
     }
 }

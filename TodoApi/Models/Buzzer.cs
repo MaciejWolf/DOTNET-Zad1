@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WebApi.Models
 {
-    public class Buzzer
+    public class Buzzer : IBuzzer
     {
         private const int FIZZ_NUMBER = 2;
         private const int BUZZ_NUMBER = 3;

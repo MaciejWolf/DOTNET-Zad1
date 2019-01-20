@@ -19,24 +19,14 @@ namespace WebApi.Controllers
         public RoomController(RoomContext context)
         {
             this.context = context;
-
-            if(context.Rooms.Count() == 0)
-            {
-                context.Rooms.Add(new Room { Name = "A", Floor = 3 });
-                context.Rooms.Add(new Room { Name = "B", Floor = 35 });
-                context.Rooms.Add(new Room { Name = "C", Floor = 23 });
-                context.SaveChanges();
-            }
         }
 
-        // GET: /api/Todo
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Room>>> GetRooms()
         {
             return await context.Rooms.ToListAsync();
         }
 
-        // GET: /api/Todo/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Room>> GetRoom(long id)
         {
@@ -50,7 +40,6 @@ namespace WebApi.Controllers
             return room;
         }
 
-        // POST: api/Todo
         [HttpPost]
         public async Task<ActionResult<Room>> PostRoom(Room room)
         {

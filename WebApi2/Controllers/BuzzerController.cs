@@ -2,33 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApi;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Models;
+using RestSharp;
+using WebApi2.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace WebApi.Controllers
+namespace WebApi2.Controllers
 {
     [Route("api/[controller]")]
     public class BuzzerController : Controller
     {
-        private readonly Buzzer buzzer = new Buzzer();
+        private readonly IBuzzerService buzzerService;
+
+        public BuzzerController(IBuzzerService buzzerService)
+        {
+            this.buzzerService = buzzerService;
+        }
 
         [HttpGet("{input}")]
         public ActionResult<string> GetSignal(int input)
         {
-            string signal;
-            try
-            {
-                signal = buzzer.GetSignal(input);
-            }
-            catch(ArgumentOutOfRangeException)
-            {
-                return BadRequest();
-            }
-
-            return signal;
+            return buzzerService.GetSignal(input);
         }
     }
 }
